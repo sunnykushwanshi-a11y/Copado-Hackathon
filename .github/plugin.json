@@ -1,0 +1,22 @@
+{
+  "name": "agentia-deployguard",
+  "version": "1.0.0",
+  "description": "Pre-deployment security & governance scanner for Agentia CLI",
+  "skills": [
+    {
+      "file": "skills/deployguard.agent.md",
+      "targets": ["agents", "cursor", "vscode", "claude"]
+    }
+  ],
+  "mcpServers": {
+    "deployguard": {
+      "command": "node",
+      "args": ["src/mcp-server.js"],
+      "description": "Agentia DeployGuard — pre-deployment security & governance scanner"
+    }
+  },
+  "hooks": {
+    "pre-push": "deployguard scan --fail-on high",
+    "pre-promote": "deployguard scan --fail-on critical"
+  }
+}

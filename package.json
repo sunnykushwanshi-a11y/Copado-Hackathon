@@ -1,0 +1,39 @@
+{
+  "name": "agentia-deployguard",
+  "version": "1.0.0",
+  "description": "Pre-deployment security & governance scanner for Copado Agentia CLI — flags risks in Salesforce metadata before promotion",
+  "type": "module",
+  "main": "src/index.js",
+  "bin": {
+    "deployguard": "./src/cli.js"
+  },
+  "scripts": {
+    "start": "node src/cli.js",
+    "mcp": "node src/mcp-server.js",
+    "scan": "node src/cli.js scan",
+    "test": "node src/tests/run-tests.js",
+    "demo": "node src/demo.js"
+  },
+  "keywords": [
+    "copado",
+    "agentia",
+    "salesforce",
+    "devops",
+    "security",
+    "governance",
+    "metadata",
+    "deployment"
+  ],
+  "author": "Agentia DeployGuard",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "chalk": "^5.3.0",
+    "commander": "^12.0.0",
+    "glob": "^10.5.0",
+    "xml2js": "^0.6.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
